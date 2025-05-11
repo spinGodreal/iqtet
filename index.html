@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini IQ Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mini IQ Test</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <h2>1. Book is to Reading as Fork is to:</h2>
+      <label><input type="radio" name="q1" value="D"> Eating</label><br>
+      <label><input type="radio" name="q1" value="A"> Drawing</label><br>
+      <label><input type="radio" name="q1" value="B"> Writing</label><br>
+      <label><input type="radio" name="q1" value="C"> Stirring</label>
+    </div>
+
+    <div class="question">
+      <h2>2. Glove is to Hand as Hat is to:</h2>
+      <label><input type="radio" name="q2" value="C"> Head</label><br>
+      <label><input type="radio" name="q2" value="A"> Foot</label><br>
+      <label><input type="radio" name="q2" value="B"> Leg</label><br>
+      <label><input type="radio" name="q2" value="D"> Neck</label>
+    </div>
+
+    <div class="question">
+      <h2>3. Bark is to Dog as Meow is to:</h2>
+      <label><input type="radio" name="q3" value="B"> Cat</label><br>
+      <label><input type="radio" name="q3" value="A"> Cow</label><br>
+      <label><input type="radio" name="q3" value="C"> Snake</label><br>
+      <label><input type="radio" name="q3" value="D"> Bird</label>
+    </div>
+
+    <div class="question">
+      <h2>4. Artist is to Paint as Chef is to:</h2>
+      <label><input type="radio" name="q4" value="B"> Food</label><br>
+      <label><input type="radio" name="q4" value="A"> Apron</label><br>
+      <label><input type="radio" name="q4" value="C"> Stove</label><br>
+      <label><input type="radio" name="q4" value="D"> Music</label>
+    </div>
+
+    <div class="question">
+      <h2>5. Pen is to Author as Brush is to:</h2>
+      <label><input type="radio" name="q5" value="C"> Painter</label><br>
+      <label><input type="radio" name="q5" value="A"> Carpenter</label><br>
+      <label><input type="radio" name="q5" value="B"> Writer</label><br>
+      <label><input type="radio" name="q5" value="D"> Mechanic</label>
+    </div>
+
+    <div class="question">
+      <h2>6. What comes next? 2, 4, 8, 16, ___</h2>
+      <label><input type="radio" name="q6" value="C"> 32</label><br>
+      <label><input type="radio" name="q6" value="A"> 18</label><br>
+      <label><input type="radio" name="q6" value="B"> 20</label><br>
+      <label><input type="radio" name="q6" value="D"> 24</label>
+    </div>
+
+    <div class="question">
+      <h2>7. All roses are flowers. Some flowers fade quickly. Therefore:</h2>
+      <label><input type="radio" name="q7" value="D"> Nothing can be concluded</label><br>
+      <label><input type="radio" name="q7" value="A"> All roses fade quickly</label><br>
+      <label><input type="radio" name="q7" value="B"> Some roses fade quickly</label><br>
+      <label><input type="radio" name="q7" value="C"> Some flowers that fade quickly are roses</label>
+    </div>
+
+    <div class="question">
+      <h2>8. Which is the odd one out? 11, 13, 15, 17, 19</h2>
+      <label><input type="radio" name="q8" value="B"> 15</label><br>
+      <label><input type="radio" name="q8" value="A"> 13</label><br>
+      <label><input type="radio" name="q8" value="C"> 17</label><br>
+      <label><input type="radio" name="q8" value="D"> 11</label>
+    </div>
+
+    <div class="question">
+      <h2>9. If two pencils cost $1.50, how much do five cost?</h2>
+      <label><input type="radio" name="q9" value="D"> $3.75</label><br>
+      <label><input type="radio" name="q9" value="A"> $3.00</label><br>
+      <label><input type="radio" name="q9" value="B"> $3.50</label><br>
+      <label><input type="radio" name="q9" value="C"> $4.00</label>
+    </div>
+
+    <div class="question">
+      <h2>10. A man says, “Brothers and sisters I have none, but the man in the picture’s father is my father’s son.” Who is the man?</h2>
+      <label><input type="radio" name="q10" value="A"> His son</label><br>
+      <label><input type="radio" name="q10" value="B"> His father</label><br>
+      <label><input type="radio" name="q10" value="C"> Himself</label><br>
+      <label><input type="radio" name="q10" value="D"> His uncle</label>
+    </div>
+
+    <div class="question">
+      <h2>11. What comes next: Triangle, Square, Triangle, Square, ___</h2>
+      <label><input type="radio" name="q11" value="B"> Triangle</label><br>
+      <label><input type="radio" name="q11" value="A"> Circle</label><br>
+      <label><input type="radio" name="q11" value="C"> Square</label><br>
+      <label><input type="radio" name="q11" value="D"> Hexagon</label>
+    </div>
+
+    <div class="question">
+      <h2>12. What comes next: A, C, F, J, O, ___</h2>
+      <label><input type="radio" name="q12" value="A"> T</label><br>
+      <label><input type="radio" name="q12" value="B"> U</label><br>
+      <label><input type="radio" name="q12" value="C"> V</label><br>
+      <label><input type="radio" name="q12" value="D"> W</label>
+    </div>
+
+    <div class="question">
+      <h2>13. Continue the pattern: 1, 1, 2, 3, 5, 8, ___</h2>
+      <label><input type="radio" name="q13" value="D"> 13</label><br>
+      <label><input type="radio" name="q13" value="A"> 10</label><br>
+      <label><input type="radio" name="q13" value="B"> 11</label><br>
+      <label><input type="radio" name="q13" value="C"> 12</label>
+    </div>
+
+    <div class="question">
+      <h2>14. All bloops are razzies. All razzies are lazzies. Are all bloops lazzies?</h2>
+      <label><input type="radio" name="q14" value="A"> Yes</label><br>
+      <label><input type="radio" name="q14" value="B"> No</label><br>
+      <label><input type="radio" name="q14" value="C"> Cannot be determined</label><br>
+      <label><input type="radio" name="q14" value="D"> Only some</label>
+    </div>
+
+    <div class="question">
+      <h2>15. In a mirror, the letter "d" looks like:</h2>
+      <label><input type="radio" name="q15" value="B"> q</label><br>
+      <label><input type="radio" name="q15" value="A"> b</label><br>
+      <label><input type="radio" name="q15" value="C"> p</label><br>
+      <label><input type="radio" name="q15" value="D"> d</label>
+    </div>
+
+    <button type="button" onclick="calculateScore()">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const answers = {
+      q1: 'D', q2: 'C', q3: 'B', q4: 'B', q5: 'C',
+      q6: 'C', q7: 'D', q8: 'B', q9: 'D', q10: 'A',
+      q11: 'B', q12: 'A', q13: 'D', q14: 'A', q15: 'B'
+    };
+
+    function calculateScore() {
+      let score = 0;
+      for (let i = 1; i <= 15; i++) {
+        const q = document.querySelector(`input[name="q${i}"]:checked`);
+        if (q && q.value === answers[`q${i}`]) score++;
+      }
+
+      let iq = 90 + score * 3;
+      let level =
+        score < 6 ? "Below Average" :
+        score < 10 ? "Average" :
+        score < 13 ? "Above Average" :
+        score < 15 ? "Superior" : "Gifted";
+
+      document.getElementById("result").innerHTML = 
+        `You got ${score}/15 correct.<br>
+        Estimated IQ: <strong>${iq}</strong><br>
+        Level: <strong>${level}</strong>`;
+    }
+  </script>
+</body>
+</html>
