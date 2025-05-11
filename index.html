@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mini IQ Test</title>
+  <title>Extended IQ Test</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -26,9 +26,10 @@
   </style>
 </head>
 <body>
-  <h1>Mini IQ Test</h1>
+  <h1>Extended IQ Test</h1>
 
   <form id="quizForm">
+    <!-- Questions 1–15 -->
     <div class="question">
       <h2>1. Book is to Reading as Fork is to:</h2>
       <label><input type="radio" name="q1" value="D"> Eating</label><br>
@@ -102,13 +103,13 @@
     </div>
 
     <div class="question">
-      <h2>10. A man says, “Brothers and sisters I have none, but the man in the picture’s father is my father’s son.” Who is the man?</h2>
+      <h2>10. A man says, “Brothers and sisters I have none, but the man in the picture’s father is my father’s son.” Who is the man in the picture?</h2>
       <label><input type="radio" name="q10" value="A"> His son</label><br>
       <label><input type="radio" name="q10" value="B"> His father</label><br>
       <label><input type="radio" name="q10" value="C"> Himself</label><br>
       <label><input type="radio" name="q10" value="D"> His uncle</label>
     </div>
-
+    
     <div class="question">
       <h2>11. What comes next: Triangle, Square, Triangle, Square, ___</h2>
       <label><input type="radio" name="q11" value="B"> Triangle</label><br>
@@ -149,6 +150,47 @@
       <label><input type="radio" name="q15" value="D"> d</label>
     </div>
 
+    <!-- Questions 16–20 -->
+    <div class="question">
+      <h2>16. What number comes next: 4, 9, 16, 25, ___</h2>
+      <label><input type="radio" name="q16" value="A"> 36</label><br>
+      <label><input type="radio" name="q16" value="B"> 30</label><br>
+      <label><input type="radio" name="q16" value="C"> 32</label><br>
+      <label><input type="radio" name="q16" value="D"> 40</label>
+    </div>
+
+    <div class="question">
+      <h2>17. Which word does NOT belong?</h2>
+      <label><input type="radio" name="q17" value="A"> Apple</label><br>
+      <label><input type="radio" name="q17" value="B"> Banana</label><br>
+      <label><input type="radio" name="q17" value="C"> Carrot</label><br>
+      <label><input type="radio" name="q17" value="D"> Grape</label>
+    </div>
+
+    <div class="question">
+      <h2>18. Which is the synonym of "Opaque"?</h2>
+      <label><input type="radio" name="q18" value="A"> Transparent</label><br>
+      <label><input type="radio" name="q18" value="B"> Cloudy</label><br>
+      <label><input type="radio" name="q18" value="C"> Clear</label><br>
+      <label><input type="radio" name="q18" value="D"> Bright</label>
+    </div>
+
+    <div class="question">
+      <h2>19. What comes next? Z, X, V, T, ___</h2>
+      <label><input type="radio" name="q19" value="A"> R</label><br>
+      <label><input type="radio" name="q19" value="B"> S</label><br>
+      <label><input type="radio" name="q19" value="C"> P</label><br>
+      <label><input type="radio" name="q19" value="D"> Q</label>
+    </div>
+
+    <div class="question">
+      <h2>20. If all Smibs are Blibs, and all Blibs are Plibs, then:</h2>
+      <label><input type="radio" name="q20" value="A"> All Smibs are Plibs</label><br>
+      <label><input type="radio" name="q20" value="B"> Some Plibs are Smibs</label><br>
+      <label><input type="radio" name="q20" value="C"> No Smibs are Plibs</label><br>
+      <label><input type="radio" name="q20" value="D"> Smibs are not Blibs</label>
+    </div>
+
     <button type="button" onclick="calculateScore()">Submit</button>
   </form>
 
@@ -158,27 +200,39 @@
     const answers = {
       q1: 'D', q2: 'C', q3: 'B', q4: 'B', q5: 'C',
       q6: 'C', q7: 'D', q8: 'B', q9: 'D', q10: 'A',
-      q11: 'B', q12: 'A', q13: 'D', q14: 'A', q15: 'B'
+      q11: 'B', q12: 'A', q13: 'D', q14: 'A', q15: 'B',
+      q16: 'A', q17: 'C', q18: 'B', q19: 'A', q20: 'A'
     };
 
     function calculateScore() {
       let score = 0;
-      for (let i = 1; i <= 15; i++) {
+      for (let i = 1; i <= 20; i++) {
         const q = document.querySelector(`input[name="q${i}"]:checked`);
         if (q && q.value === answers[`q${i}`]) score++;
       }
 
-      let iq = 90 + score * 3;
-      let level =
-        score < 6 ? "Below Average" :
-        score < 10 ? "Average" :
-        score < 13 ? "Above Average" :
-        score < 15 ? "Superior" : "Gifted";
+      let iq, level;
+      if (score <= 8) {
+        iq = "<90";
+        level = "Below Average";
+      } else if (score <= 13) {
+        iq = "4: 82, 5: 85, 6: 88, 7: 91, 8: 94, 9: 97, 10: 100, 11: 103, 12: 106, 13: 108";
+        level = "Average";
+      } else if (score <= 17) {
+        iq = "14: 109, 15: 110, 16: 114, 17: 118";
+        level = "Above Average";
+      } else if (score <= 19) {
+        iq = "121–130";
+        level = "Superior";
+      } else {
+        iq = ">130";
+        level = "Gifted";
+      }
 
-      document.getElementById("result").innerHTML = 
-        `You got ${score}/15 correct.<br>
-        Estimated IQ: <strong>${iq}</strong><br>
-        Level: <strong>${level}</strong>`;
+      document.getElementById("result").innerHTML =
+        `You got ${score}/20 correct.<br>
+         Estimated IQ: <strong>${iq}</strong><br>
+         Level: <strong>${level}</strong>`;
     }
   </script>
 </body>
